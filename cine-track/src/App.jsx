@@ -1,5 +1,11 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Home from "./pages/Home";
+import Explorar from "./pages/Explorar";
+import Buscar from "./pages/Buscar";
+import Detalhes from "./pages/Detalhes";
+import MinhaLista from "./pages/MinhaLista";
 
 function App() {
   return (
@@ -7,12 +13,14 @@ function App() {
       <Header />
 
       <Routes>
-        <Route path="/" element={<h1>Home</h1>} />
-        <Route path="/explorar" element={<h1>Explorar</h1>} />
-        <Route path="/buscar" element={<h1>Buscar</h1>} />
-        <Route path="/titulo/:id" element={<h1>Detalhes</h1>} />
-        <Route path="/minha-lista" element={<h1>Minha Lista</h1>} />
+        <Route path="/" element={<Home />} />
+        <Route path="/explorar" element={<Explorar />} />
+        <Route path="/buscar" element={<Buscar />} />
+        <Route path="/titulo/:id" element={<Detalhes />} />
+        <Route path="/minha-lista" element={<MinhaLista />} />
       </Routes>
+
+      <Footer />
     </BrowserRouter>
   );
 }
